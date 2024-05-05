@@ -9,17 +9,6 @@ Tarea-Manager es un programa en Python que utiliza Programación Orientada a Obj
 - **Mostrar todas las tareas:** Imprime en pantalla todas las tareas pendientes, numeradas y mostrando su estado (completada o pendiente).
 - **Eliminar una tarea:** Permite al usuario eliminar una tarea de la lista, dada su posición.
 
-## Cómo usar
-
-1. Abre una terminal.
-2. Navega hasta la carpeta `tarea-manager`.
-3. Ejecuta el siguiente comando para iniciar el programa:
-   
-    ```bash
-   python main.py 
-   ``` 
-4. Sigue las instrucciones en pantalla para realizar las acciones deseadas.
-
 ## Requerimientos
 
 - Python 3.x
@@ -43,3 +32,4 @@ Tarea-Manager es un programa en Python que utiliza Programación Orientada a Obj
    ```bash
    python main.py
    ```
+4. Sigue las instrucciones en pantalla para realizar las acciones deseadas.
