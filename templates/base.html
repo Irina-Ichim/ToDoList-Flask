@@ -4,35 +4,60 @@
     <meta charset="UTF-8">
     <title>Todo App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="first" >
-        <h1>To Do List</h1>
-        <form  action="/add" method="post">
-            <div >
-                <label class="thick">Enter the task</label>
-                <input type="text" name="name">
-            <button class="button1" type="submit" >Add</button>
+<div id="container">
+    <img src="{{ url_for('static', filename='Irina.jpg')}}" id="taskIcon">
+    <div id="form-container">
+        
+        <h2>Agrega Nuevas Tareas</h2>
+        <form action="/add" method="post" onsubmit="return validar()">
+            <div>
+                <input type="text" name="name" id="taskInput" placeholder="Enter the task">
+                <button class="button1" type="submit">Agregar</button>
             </div>
         </form>
-        <br><br>
-     <table>
-         <tbody>
-        {% for todo in todo_list %}
-        <tr>
-            <td class="thick">{{todo.task_id }}</td>
-            <td class="thick">{{ todo.name }}</td>
-            {% if todo.done == False %}
-            <td><label class="label pending">Not done</label></td>
-            {% else %}
-            <td><label class="label done">Done</label></td>
-            {% endif %}
-            <td><a  href="/update/{{ todo.task_id }}" class="button2">Update</a></td>
-            <td><a  href="/delete/{{ todo.task_id }}" class="button3">Delete</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    </div>
+    <div id="task-list">
+        <h2>Mis Tareas diarias</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task ID</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for todo in todo_list %}
+                <tr>
+                    <td>{{ todo.task_id }}</td>
+                    <td>{{ todo.name }}</td>
+                    <td class="{% if todo.done %}done{% else %}pending{% endif %}">
+                        {% if todo.done %}Done{% else %}Not done{% endif %}
+                    </td>
+                    <td>
+                        <a href="/update/{{ todo.task_id }}" class="button2">Actualizar</a>
+                        <a href="/delete/{{ todo.task_id }}" class="button3">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
+<script>
+    function validar() {
+        var tarea = document.getElementById("taskInput").value;
+        if (tarea.trim() === "") {
+            alert("Please enter a task before adding.");
+            return false; // Evita que se envíe el formulario si la tarea está vacía
+        }
+        return true; // Permite enviar el formulario si la tarea no está vacía
+    }
+</script>
 </body>
 </html>
+
