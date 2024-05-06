@@ -14,7 +14,7 @@
         <h2>Agrega Nuevas Tareas</h2>
         <form action="/add" method="post" onsubmit="return validar()">
             <div>
-                <input type="text" name="name" id="taskInput" placeholder="Enter the task">
+                <input type="text" name="name" id="taskInput" placeholder="Agrega tarea">
                 <button class="button1" type="submit">Agregar</button>
             </div>
         </form>
@@ -53,9 +53,9 @@
         var tarea = document.getElementById("taskInput").value;
         if (tarea.trim() === "") {
             alert("Please enter a task before adding.");
-            return false; // Evita que se envíe el formulario si la tarea está vacía
+            return false; 
         }
-        return true; // Permite enviar el formulario si la tarea no está vacía
+        return true; 
     }
 </script>
 </body>
