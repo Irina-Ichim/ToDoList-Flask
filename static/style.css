@@ -15,11 +15,11 @@ body {
 
 h2{
     color: white;
-    text-align: center;
+    text-align: flex-start;
     font-size: 36px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
 }
+
 #form-container {
     flex: 1;
     margin-right: 20px;
@@ -34,7 +34,7 @@ h2{
     overflow: hidden;
 }
 
-#task-list h2{
+#task-list h2 {
     background-color: #7322a2;
     color: white;
     padding: 20px;
@@ -71,14 +71,14 @@ h2{
     background-color: #da43ba;
 }
 
-
 .button2:hover {
     background-color: #218838;
 }
-.button3:hover{
-    background-color: red;
 
+.button3:hover {
+    background-color: red;
 }
+
 #form-container {
     position: relative;
 }
@@ -98,26 +98,28 @@ h2{
     #container {
         flex-direction: column;
         align-items: center;
-        margin-top: 100px; 
+        margin-top: 100px;
+        padding: 20px; /* Añadido para dar espacio entre los elementos */
     }
-    
+
     #form-container {
         margin-right: 0;
         margin-top: 20px;
     }
-    
+
     #task-list {
         margin-top: 20px;
     }
 
     #taskIcon {
-        position: relative; 
+        position: relative;
         top: auto;
         left: auto;
         transform: none;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
 }
+
 
 
 

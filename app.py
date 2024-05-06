@@ -1,3 +1,10 @@
+"""
+Módulo para una aplicación de lista de tareas con Flask y SQLAlchemy.
+Permite agregar, marcar como completadas y eliminar tareas.
+"""
+
+from datetime import datetime
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
@@ -25,8 +32,14 @@ def home():
     """
     Ruta para mostrar la página de inicio con la lista de tareas.
     """
+    # Obtener la lista de tareas
     todo_list = Todo.query.all()
-    return render_template('base.html', todo_list=todo_list)
+    
+     # Obtener la hora actual y formatearla en HH:MM:SS
+    hora_actual = datetime.now().strftime('%H:%M:%S')
+    
+    # Renderizar la plantilla HTML con la lista de tareas y la hora actual
+    return render_template('base.html', todo_list=todo_list, hora_actual=hora_actual)
 
 
 @app.route('/add', methods=['POST'])
