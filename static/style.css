@@ -43,7 +43,14 @@ h2{
     border-bottom: 1px solid #de43ba;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+.done {
+    color: rgb(28, 216, 25);
+}
 
+.not-done {
+    color: #4b0772
+    
+}
 #task-list table {
     width: 100%;
     border-collapse: collapse;
@@ -99,7 +106,7 @@ h2{
         flex-direction: column;
         align-items: center;
         margin-top: 100px;
-        padding: 20px; /* Añadido para dar espacio entre los elementos */
+        padding: 20px; 
     }
 
     #form-container {

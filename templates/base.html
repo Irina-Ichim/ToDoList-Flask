@@ -37,7 +37,7 @@
                     <td>{{ todo.task_id }}</td>
                     <td>{{ todo.name }}</td>
                     <td class="{% if todo.done %}done{% else %}pending{% endif %}">
-                        {% if todo.done %}Done{% else %}Not done{% endif %}
+                        {% if todo.done %}<span class="done">Done</span>{% else %}<span class="not-done">Not done</span>{% endif %}
                     </td>
                     <td>
                         <a href="/update/{{ todo.task_id }}" class="button2">Actualizar</a>
