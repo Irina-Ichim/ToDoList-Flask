@@ -1,4 +1,4 @@
-# ToDoList 
+# ToDoList Python
 
 ![ToDoList Image](static/TodoListPython.png)
 
@@ -17,7 +17,12 @@ Además, el programa incluye las siguientes características:
 
 - **Manejo de excepciones:** El programa maneja excepciones en caso de que el usuario ingrese una opción no válida o una posición que no exista en la lista.
 
-## Parte 2: Interfaz de Usuario (Ubicada en la carpeta 'flask-todo-app')
+### Para ejecutar el programa:
+
+1. Navega a la carpeta 'tarea-manager' utilizando el comando `cd tarea-manager`.
+2. Ejecuta el programa principal con el comando `python main.py`.
+
+## Parte 2: Interfaz de Usuario 
 
 Esta parte del proyecto es una interfaz de usuario web desarrollada con Flask y SQLite. Para crear la base de datos con SQLAlchemy y utilizarla en la aplicación Flask, sigue los siguientes pasos desde la terminal:
 
